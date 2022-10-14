@@ -1,5 +1,5 @@
 import { TiTick } from "react-icons/ti";
-import Button from "./FormComponets/button";
+
 import "./css/message.css";
 import { Link } from "react-router-dom";
 const Message = () => {

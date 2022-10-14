@@ -1,11 +1,7 @@
-const Button = ({ text, ma, bg, pa }) => {
+const Button = ({ text, handleSubmit }) => {
   return (
     <div>
-      <button
-        className="submit-btn"
-        type="submit"
-        style={{ background: { bg } }}
-      >
+      <button className="submit-btn" type="submit" onClick={handleSubmit}>
         {text}
       </button>
     </div>
