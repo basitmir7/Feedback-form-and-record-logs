@@ -1,0 +1,21 @@
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+.checkbox-field {
+  display: flex;
+}
+.checkbox-field p {
+  align-items: center;
+  margin: 7px;
+  font-weight: 100;
+  font-size: 15px;
+}
+.checkbox-field input {
+  margin: 7px;
+}
+.checkbox-field input[type="checkbox"]:checked {
+  filter: invert(177%) sepia(19%) saturate(52%) hue-rotate(226deg)
+    brightness(87%) contrast(175%);
+}

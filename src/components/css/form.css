@@ -1,0 +1,77 @@
+.form-wrapper {
+  height: 97vh;
+  font-weight: bold;
+}
+.form-container {
+  background: rgba(235, 235, 235, 0.871);
+  margin: 23px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+}
+.form-heading,
+.form {
+  margin: 23px;
+  width: 94%;
+}
+.form-heading {
+  text-align: left;
+  background: white;
+  padding: 10px 27px;
+  border-radius: 4px;
+}
+.form {
+  background: white;
+  flex-grow: 1;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+  border-radius: 4px;
+  min-height: 68vh;
+}
+.left-form-group,
+.right-form-group {
+  width: 46%;
+}
+.text-input input,
+.PhoneInput input {
+  width: 100%;
+  font-size: 21px;
+  border: 1.5px solid rgb(209, 208, 208);
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+.form-group {
+  padding: 16px 0;
+}
+label span {
+  color: red;
+}
+input {
+  margin-top: 6px;
+}
+.PhoneInputCountry {
+  border: 1.5px solid rgb(209, 208, 208);
+  height: 35px;
+  margin-top: 7px;
+  padding: 4px;
+  border-radius: 4px;
+}
+.submit-btn {
+  float: right;
+  margin-right: 23px;
+  padding: 6px 15px;
+  text-transform: capitalize;
+  border: none;
+  background: #3b983c;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.submit-btn:hover {
+  opacity: 0.8;
+}
