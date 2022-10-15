@@ -75,3 +75,36 @@ input {
 .submit-btn:hover {
   opacity: 0.8;
 }
+
+/* error messages */
+.error {
+  width: 100%;
+  border: 1.5px solid red;
+  height: 2.5rem;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+  display: none;
+  background: rgb(255, 216, 217);
+}
+.error .icon {
+  font-size: 23px;
+  margin-right: 5px;
+  color: red;
+}
+.error p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  color: red;
+}
+.error-display {
+  display: flex !important;
+}
+/* .error-name::after {
+  content: "name is empty";
+  position: relative;
+  width: 100%;
+  border: 1.5px solid red;
+} */

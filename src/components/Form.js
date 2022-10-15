@@ -6,17 +6,21 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import { BiErrorCircle } from "react-icons/bi";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  let isName;
 
   // submit function
   const handleformSubmit = (e) => {
     console.log(name, phone, email);
+
     if (name == "") {
-      console.log("empty filed");
+      isName = !isName;
+      console.log(isName);
     }
   };
   return (
@@ -35,7 +39,10 @@ const Form = () => {
                 name="Customer Name"
                 setValue={setName}
               />
-              <div className="error-message"></div>
+              <div className={`error ${!isName ? "error-display" : ""}`}>
+                {" "}
+                <BiErrorCircle className="icon" /> <p>Name cannot be empty</p>
+              </div>
             </div>
             <div className="form-group">
               <label>
