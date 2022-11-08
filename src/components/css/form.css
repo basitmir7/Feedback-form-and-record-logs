@@ -1,14 +1,28 @@
 .form-wrapper {
-  height: 97vh;
+  min-height: 97vh;
+
   font-weight: bold;
 }
 .form-container {
-  background: rgba(235, 235, 235, 0.871);
-  margin: 23px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: start;
+}
+.layout {
+  display: flex;
+  width: 100%;
+  padding: 0 8rem;
+}
+.left-side {
+  flex: 1;
+}
+.right-side {
+  width: 50%;
+}
+.right-side > img {
+  width: 100%;
+  height: 80vh;
 }
 .form-heading,
 .form {
@@ -18,7 +32,7 @@
 .form-heading {
   text-align: left;
   background: white;
-  padding: 10px 27px;
+  padding: 2rem 7rem;
   border-radius: 4px;
 }
 .form {
@@ -26,14 +40,12 @@
   flex-grow: 1;
   padding: 20px 27px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 0;
   border-radius: 4px;
   min-height: 68vh;
-}
-.left-form-group,
-.right-form-group {
-  width: 46%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .text-input input,
 .PhoneInput input {
@@ -62,7 +74,6 @@ input {
 }
 .submit-btn {
   float: right;
-  margin-right: 23px;
   padding: 6px 15px;
   text-transform: capitalize;
   border: none;

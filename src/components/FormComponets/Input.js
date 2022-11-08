@@ -2,8 +2,7 @@ const Input = ({ name, value, type, setValue }) => {
   return (
     <div className="text-input">
       <label>
-        {name}
-        <span>*</span>
+        {name} <span>*</span>
       </label>
       <br />
       <input

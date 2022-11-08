@@ -7,87 +7,83 @@ import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { BiErrorCircle } from "react-icons/bi";
+import mainImage from "../assets/clip-1394.png";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  let isName;
+  const Message = [
+    { mssg: "please rate your overall experience ", id: 1 },
+    { mssg: "how was the service provide ?", id: 2 },
+  ];
+  const Inputs = [
+    { type: "email", name: "Email", value: email, setValue: setEmail, id: 1 },
+    { type: "text", name: "Username", value: name, setValue: setName, id: 2 },
+  ];
 
   // submit function
   const handleformSubmit = (e) => {
     console.log(name, phone, email);
-
-    if (name == "") {
-      isName = !isName;
-      console.log(isName);
-    }
   };
   return (
     <div className="form-wrapper">
       <div className="form-container">
-        <div className="form-heading">
-          <h2>Aromatic bar</h2>
-        </div>
-        <form autoComplete="off" className="form">
-          <div className="left-form-group">
-            {" "}
-            <div className="form-group">
-              <Input
-                value={name}
-                type="text"
-                name="Customer Name"
-                setValue={setName}
-              />
-              <div className={`error ${!isName ? "error-display" : ""}`}>
-                {" "}
-                <BiErrorCircle className="icon" /> <p>Name cannot be empty</p>
+        <header className="form-heading">
+          <h2>Please provide your feedback ?</h2>
+        </header>
+        <main className="layout">
+          <div className="left-side">
+            <form autoComplete="off" className="form">
+              {/* <div className={`error `}>
+                  {" "}
+                  <BiErrorCircle className="icon" /> <p>Name cannot be empty</p>
+                </div> */}
+
+              {Inputs.map((input) => {
+                return (
+                  <div className="form-group" id={input.id}>
+                    <Input
+                      type={input.type}
+                      name={input.name}
+                      value={input.value}
+                      setValue={input.setValue}
+                    />
+                  </div>
+                );
+              })}
+              <div className="form-group">
+                <label>
+                  phone<span>*</span>
+                </label>
+
+                <PhoneInput
+                  defaultCountry="IN"
+                  value={phone}
+                  onChange={setPhone}
+                  required
+                />
+                <br />
               </div>
-            </div>
-            <div className="form-group">
-              <label>
-                phone<span>*</span>
-              </label>
-
-              <PhoneInput
-                defaultCountry="IN"
-                value={phone}
-                onChange={setPhone}
-                required
+              {Message.map((msg) => {
+                return (
+                  <div className="form-group" key={msg.id}>
+                    <Checkbox message={msg.mssg} />
+                  </div>
+                );
+              })}
+              <Button
+                text="submit review"
+                type="submit"
+                handleSubmit={() => handleformSubmit()}
               />
-              <br />
-            </div>
-            <div className="form-group">
-              <Checkbox message="Please rate the qality of the service you recieved fro your host" />
-            </div>
-            <div className="form-group">
-              <Checkbox message=" Was our restraunt clean ?" />
-            </div>
+            </form>
           </div>
-          <div className="right-form-group">
-            <div className="form-group">
-              <Input
-                type="email"
-                name="Email"
-                value={email}
-                setValue={setEmail}
-              />
-            </div>
-            <div className="form-group" style={{ marginTop: "7.2rem" }}>
-              <Checkbox message="Please rate the quality of your beverage" />
-            </div>
-            <div className="form-group">
-              <Checkbox message="Please rate overall dining experience" />
-            </div>
+          <div className="right-side">
+            <img src={mainImage} />
           </div>
-        </form>
+        </main>
       </div>
-
-      <Button
-        text="submit review"
-        type="submit"
-        handleSubmit={() => handleformSubmit()}
-      />
     </div>
   );
 };
